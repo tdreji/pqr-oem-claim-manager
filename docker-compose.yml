@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  pqr-app:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    container_name: pqr-oem-platform
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    environment:
+      - VITE_GOOGLE_SHEET_ID=1QNhGBIunSARRgKq4KEMCzBzJS-mz-_DaA-Dvq-Zyb0c
+      - VITE_APP_NAME="PQR & OEM Claim Manager"
+      - VITE_COMPANY_NAME="Al Habtoor Motors Co. LLC"
